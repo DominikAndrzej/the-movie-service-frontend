@@ -1,7 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Header from "@/layout/Header.vue";
+</script>
 
 <template>
-  <h1 class="text-3xl font-bold underline text-blue-600">Hello Tailwind!</h1>
+  <Header/>
+  <router-view/>
 </template>
 
 <style scoped></style>
