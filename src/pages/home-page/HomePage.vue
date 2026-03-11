@@ -101,16 +101,23 @@ const prevPage = () => {
 
   <TableView :items="currentItems" :loading="isLoading">
     <template #header>
-      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"><strong>Title</strong></th>
-      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"><strong>Release date</strong></th>
+      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Title</th>
+      <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Release Date</th>
     </template>
 
     <template #row="{ item }">
-      <td class="px-6 py-4 whitespace-nowrap text-sm font-bold md:font-normal">
-        <strong>{{ item.title }}</strong>
+      <td class="px-6 py-2 md:py-4 whitespace-nowrap text-sm">
+        <div class="flex flex-col md:flex-row">
+          <span class="md:hidden text-[10px] font-bold uppercase text-gray-400 mb-1">Title</span>
+          <span class="font-bold text-gray-900 md:font-normal">{{ item.title }}</span>
+        </div>
       </td>
-      <td class="px-6 py-4 whitespace-nowrap text-sm font-bold md:font-normal">
-        {{ item.release_date }}
+
+      <td class="px-6 py-2 md:py-4 whitespace-nowrap text-sm text-gray-600">
+        <div class="flex flex-col md:flex-row">
+          <span class="md:hidden text-[10px] font-bold uppercase text-gray-400 mb-1">Release Date</span>
+          <span>{{ item.release_date }}</span>
+        </div>
       </td>
     </template>
   </TableView>
